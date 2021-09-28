@@ -13,7 +13,7 @@ with open(file, 'r', encoding='utf-8') as file:
         for c in line:
             # print(hex(ord(c)))
             code = ord(c)
-            print(code)
+            # print(code)
             if (
                     (code >= 0x102b and code <= 0x103e) or
                     (code >= 0x1056 and code <= 0x1059) or
