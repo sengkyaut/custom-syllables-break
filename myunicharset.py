@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 import sys
 
-if len(sys.argv) < 1:
+if len(sys.argv) < 2:
     exit(f"Usage {sys.argv[0]} input.txt")
 
 file = sys.argv[1]
+
+file_base = file.split(".txt")[0]
 
 charset = set()
 
@@ -46,6 +48,8 @@ print(notfound)
 # print hexcode for better vision
 print([hex(ord(a)) for a in notfound])
 
-# with open('charset_out.txt', 'w', encoding='utf-8') as file:
-#     for char in charset:
-#         file.write(char + "\n")
+output_file = f"{file_base}_charsets.txt"
+
+with open(output_file, 'w', encoding='utf-8') as file:
+    for char in charset:
+        file.write(char)
